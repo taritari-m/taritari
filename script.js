@@ -62,7 +62,7 @@ function createProcess(year, month) {
                 if(year == today.getFullYear()
                   && month == (today.getMonth())
                   && count == today.getDate()){
-                    calendar += "<td class='today'>" + count + "</td>";
+                    calendar += "<td class='today'><button class = papa>" + count + "</button></td>";
                 } else {
                     calendar += "<td>" + count + "</td>";
                 }
@@ -72,3 +72,7 @@ function createProcess(year, month) {
     }
     return calendar;
 }
+
+/*calender.onload function (){
+  alert("aaaaaaaaaaaa");
+}*/
