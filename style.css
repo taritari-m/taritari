@@ -3,6 +3,7 @@
 }
 #result {
     font-size:  90%;  /*表の文字サイズ*/
+    color: rgb(61, 61, 61);
 }
 .number {
     background-color: #b3e6ff;
