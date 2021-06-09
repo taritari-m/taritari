@@ -59,14 +59,7 @@ th, td {
     padding-bottom: 10px;
     text-align: center;
 }
-/*日曜日*/
-td:first-child {
-    color: red;
-}
-/*土曜日*/
-td:last-child {
-    color: blue;
-}
+/*日曜と土曜日の文字色を変えるのをなくした*/
 /*前後月の日付*/
 td.disabled {
     color: #ccc;
