@@ -66,7 +66,7 @@ td.disabled {
 }
 /*本日*/
 td.today {
-    background-color: #D65E72;
+    background-color: #f07878;
     color: #fff;
 }
 
@@ -76,17 +76,17 @@ td.today {
 }
 #next-prev-button button{
     cursor: pointer;
-    background: #B78D4A;
+    background: #ff7c5c;
     color: #fff;
-    border: 1px solid #B78D4A;
+    border: 1px solid #ff7c5c;
     border-radius: 4px;
     font-size: 1rem;
     padding: 0.5rem 2rem;
     margin: 1rem 0;
 }
 #next-prev-button button:hover{
-    background-color: #D4BB92;
-    border-color: #D4BB92;
+    background-color: rgb(238, 203, 203);
+    border-color: rgb(238, 203, 203);
 }
 #prev {
     float: left;
