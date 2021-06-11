@@ -62,9 +62,9 @@ function createProcess(year, month) {
                 if(year == today.getFullYear()
                   && month == (today.getMonth())
                   && count == today.getDate()){
-                    calendar += "<td class='today'><button class = papa>" + count + "</button></td>";
+                    calendar += "<td class='today'><button class = papa value=count onclick=taion(papa)>" + count + "</button></td>";
                 } else {
-                    calendar += "<td>" + count + "</td>";
+                    calendar += "<td><button class = papa value=count onclick=taion()>" + count + "</button></td>";
                 }
             }
         }
@@ -73,6 +73,11 @@ function createProcess(year, month) {
     return calendar;
 }
 
-/*calender.onload function (){
-  alert("aaaaaaaaaaaa");
-}*/
+function getValue(temperture){
+  var result = document.getElementById(temperture).value;
+  alert("今日の体温を「" + result + "」に設定しました");
+}
+function taion(papa){
+  var hiduke = getElementById(papa).value;
+  alert(hiduke);
+}
