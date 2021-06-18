@@ -100,7 +100,7 @@ td.today {
 #next {
     float: right;
 }
-.papa{
+.papa button{
     cursor: pointer;
     border: none;  /* 枠線を消す */
     outline: none; /* クリックしたときにされる枠線を消す */

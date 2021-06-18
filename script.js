@@ -62,9 +62,11 @@ function createProcess(year, month) {
                 if(year == today.getFullYear()
                   && month == (today.getMonth())
                   && count == today.getDate()){
-                    calendar += "<td class='today'><button class = papa onclick=taion()>" + count + "</button></td>";
+                    calendar += "<td class='today'><div class=papa><button id='"+count+"' onclick=taion(this)>" + count + "</button></div></td>";
+                    document.getElementById( "calendar" ).value = count;
                 } else {
-                    calendar += "<td><button class = papa onclick=taion()>" + count + "</button></td>";
+                    calendar += "<td><div class=papa><button id = '"+count+"' onclick=taion(this)>" + count + "</button></div></td>";
+                    
                 }
             }
         }
@@ -75,11 +77,12 @@ function createProcess(year, month) {
 
 function getValue(temperture){
   var result = document.getElementById(temperture).value;
-  alert("今日の体温を「" + result + " ﾟC」に設定しました");
+  alert("今日の体温を「" + result + "℃」に設定しました");
   location.href = "calender.html";
-  return result;
 }
-function taion(result){
-  var result = document.getElementById(result).value;
-  alert("日の体温は、" + result + "です。");
+
+function taion(ele){
+  var resul = ele.id;
+  var t = user.get('resul');
+  alert(resul+"日の体温は"++"℃です。");
 }
