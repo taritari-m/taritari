@@ -84,5 +84,5 @@ function getValue(temperture){
 function taion(ele){
   var resul = ele.id;
   var t = user.get('resul');
-  alert(resul+"日の体温は"++"℃です。");
+  alert(resul+"日の体温は℃です。");
 }
