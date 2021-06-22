@@ -5,7 +5,7 @@ var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
 // 初期表示
 window.onload = function () {
-    showProcess(today, calendar);
+    showProcess(today,calendar);
 };
 // 前の月表示
 function prev(){
@@ -62,10 +62,10 @@ function createProcess(year, month) {
                 if(year == today.getFullYear()
                   && month == (today.getMonth())
                   && count == today.getDate()){
-                    calendar += "<td class='today'><div class=papa><button id='"+count+"' onclick=taion(this)>" + count + "</button></div></td>";
+                    calendar += "<td class='today'><div class=papa><button id='"+count+"' onclick=taion(this.id)>" + count + "</button></div></td>";
                     document.getElementById( "calendar" ).value = count;
                 } else {
-                    calendar += "<td><div class=papa><button id = '"+count+"' onclick=taion(this)>" + count + "</button></div></td>";
+                    calendar += "<td><div class=papa><button id = '"+count+"' onclick=taion(this.id)>" + count + "</button></div></td>";
                     
                 }
             }
@@ -75,14 +75,15 @@ function createProcess(year, month) {
     return calendar;
 }
 
+//当日体温設定時の確認用
 function getValue(temperture){
   var result = document.getElementById(temperture).value;
   alert("今日の体温を「" + result + "℃」に設定しました");
   location.href = "calender.html";
 }
 
-function taion(ele){
-  var resul = ele.id;
-  var t = user.get('resul');
-  alert(resul+"日の体温は℃です。");
+//体温の振り返り
+function taion(a){ 
+  var tateishi=document.getElementById("souta")
+  tateishi.innerHTML= a + "日の体温は℃です。";
 }
