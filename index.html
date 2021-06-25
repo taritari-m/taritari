@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
   </head>
   <body>
-    <script src="script.js"></script>
-    <h2>今日の体温は？</h2>
-    <input type="text"  size="10" value="" placeholder="(例)36.5" id="temperture">ﾟC
-    <p>※半角数字※</p>
-
-    <!--button-->
-    <input type="button" value="ボタン" onclick="getValue('temperture');">
+    <div id="in" >
+	    <h2>ログイン</h2>
+        <input type="username" id="username" placeholder="ID"><!--IDを入力する欄-->
+        <input type="password" id="password" placeholder="PASS">
+        <button id="log_button"  onClick="roguin();">Login</button><br><!--ログインボタン押すとroguin関数を動かす-->
+        ↓新規登録の方はこちら<br>
+        <a href="sinki.html" ><button id="log_button">新規登録</button></a><br><br> <!--新規登録ボタン　押すとsinki関数を動かす-->
+    </div>
 </body>
   </body>
 </html>

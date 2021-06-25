@@ -3,7 +3,7 @@
 #title {
     text-align: center;
 }
-#result {
+#scedule {
     font-size:  90%;  /*表の文字サイズ*/
     color: rgb(61, 61, 61);
 }
@@ -104,4 +104,77 @@ td.today {
     border: none;  /* 枠線を消す */
     outline: none; /* クリックしたときにされる枠線を消す */
     background: transparent; /* 背景の灰色を消す */
+}
+
+/*　　　ろ　　　ぐ　　　い　　　ん　　　*/
+/*body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #34495e;
+}*/
+ 
+/*ログインフォームのエリア内のスタイル*/
+#in{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ 
+#in{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+ 
+/* ユーザーIDとパスワード入力ボックスのスタイル */
+#in input[type="username"], #in input[type="password"], #in input[type="text"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+ 
+/* 入力ボックスがフォーカスされたときのスタイル（幅が大きくなる＆枠の色が変わる） */
+#in input[type="username"]:focus, #in input[type="password"]:focus, #in input[type="text"]:focus{
+    width: 280px;
+    border-color: #ff7c5c;
+    
+}
+ 
+/* Loginボタンのスタイル */
+#in button{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ff7c5c;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+ 
+/* Loginボタンをマウスオーバーしたときのスタイル */
+#in button:hover{
+    background: #ff7c5c;
+     
+}
+
+#errorText{
+  color: rgba(255, 0, 0, 0.705)
 }

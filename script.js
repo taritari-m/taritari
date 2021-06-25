@@ -78,8 +78,15 @@ function createProcess(year, month) {
 //当日体温設定時の確認用
 function getValue(temperture){
   var result = document.getElementById(temperture).value;
-  alert("今日の体温を「" + result + "℃」に設定しました");
-  location.href = "calender.html";
+  if(result<50 && result!=""){
+    alert("今日の体温を「" + result + "℃」に設定しました");
+    location.href = "calender.html";
+  }else if(result==""){
+    document.getElementById('errorText').innerHTML = "※入力してください"
+  }else{
+    document.getElementById('temperture').value="";
+    document.getElementById('errorText').innerHTML = "※半角数字で入力してください"
+  }
 }
 
 //体温の振り返り
@@ -87,3 +94,53 @@ function taion(a){
   var tateishi=document.getElementById("souta")
   tateishi.innerHTML= a + "日の体温は℃です。";
 }
+
+
+//ログイン
+function roguin(){
+  var username=document.getElementById("username").value;    /*ユーザーネームを取得*/
+  var password=document.getElementById("password").value;    /*パスワードを取得*/
+
+  if(username == "a" && password == "a"){
+    /* 処理成功 */
+    alert("ログインに成功しました");
+    location.href = "taion.html";     /*hontai.htmlに遷移*/
+  }
+  else {
+    /*処理失敗*/
+    alert("ログインに失敗しました");
+  }
+}
+
+/*新規登録関数*/
+    function sinki(){
+
+    var username=document.getElementById("username").value;     //ユーザーネームを取得
+
+    var password=document.getElementById("password").value;     //パスワードを取得
+
+    /*
+    var user = new ncmb.User();         //二フクラに新しいユーザーを設定
+// [NCMB] ID / PW で新規登録
+user.set("userName", username)      //ユーザーネームをセット
+    .set("password", password)      //パスワードをセット
+    .signUpByAccount()              //セットした情報でサインアップ
+    .then(function(user) {          //サインアップに成功した場合の処理
+        //処理成功
+        // [NCMB] userインスタンスでログイン
+        ncmb.User.login(user)       //二フクラのログインメソッド
+                 .then(function(user) {     //ログインに成功した場合の処理
+                     //処理成功
+                     alert("新規登録に成功しました");
+                     location.href = "hontai.html";     //hontai.htmlに遷移
+                 })
+                 .catch(function(error) {       //ログインに失敗した場合の処理
+                     //処理失敗
+                     alert("新規登録に失敗しました");
+                 });
+    })
+    .catch(function(error) {    //サインアップに失敗した場合の処理
+        
+        alert("すでにアカウントが存在しています");
+    });
+    */
