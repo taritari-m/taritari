@@ -3,10 +3,7 @@ const today = new Date();
 // 月末だとずれる可能性があるため、1日固定で取得
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
-// 初期表示
-window.onload = function () {
-    showProcess(today,calendar);
-};
+
 // 前の月表示
 function prev(){
     showDate.setMonth(showDate.getMonth() - 1);
@@ -112,10 +109,7 @@ function roguin(){
   }
 }
 
-var numb;
-    do{numb = Math.floor( Math.random() * 100000 );
-    }while(numb<10000);
-    var ninsyocode=0*1;
+
 /*新規登録関数*/
 function sinki(){
 
@@ -123,21 +117,7 @@ function sinki(){
 
     var password=document.getElementById("password").value;     //パスワードを取得
     
-    
-
-    Email.send({
-    SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
-    To : 'tatsuruyazawa@gmail.com',
-    From : "s201036@kashiwanoha.ed.jp",
-    Subject : "セキュリティコードです",
-    Body : "こちらがセキュリティコードです。『"+numb+"』"
-    }).then(function (message) {
-      alert("mail sent successfully")
-      location.href="ninsyou.html";
-    });
-
-ninsyocode=numb;
-alert(ninsyocode);
+    location.href="ninsyou.html";
     
     /*
     var user = new ncmb.User();         //二フクラに新しいユーザーを設定
@@ -163,16 +143,21 @@ user.set("userName", username)      //ユーザーネームをセット
         
         alert("すでにアカウントが存在しています");
     });
-    */}
+    */
+    
+}
 
-function ok(ninsyou,ninsyocode){
+function ok(ninsyou,code){
   
-  var sigeru = document.getElementById(ninsyou).value;
-  alert(ninsyocode);
-  if(sigeru==ninsyocode && sigeru!=""){
+  var matsuzaki = document.getElementById(code).value;
+
+  var shigeru = document.getElementById(ninsyou).value;
+  alert(shigeru);
+  alert();
+  if(shigeru==numb && shigeru!=""){
     alert("登録に成功しました！");
     location.href = "index.html";
-  }else if(sigeru==""){
+  }else if(shigeru==""){
     document.getElementById('errorText2').innerHTML = "※入力してください"
   }else{
     document.getElementById('ninsyou').value="";
