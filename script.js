@@ -112,15 +112,18 @@ function roguin(){
   }
 }
 
+var numb;
+    do{numb = Math.floor( Math.random() * 100000 );
+    }while(numb<10000);
+    var ninsyocode=0*1;
 /*新規登録関数*/
 function sinki(){
 
     var username=document.getElementById("username").value;     //ユーザーネームを取得
 
     var password=document.getElementById("password").value;     //パスワードを取得
-    var numb;
-    do{numb = Math.floor( Math.random() * 100000 );
-    }while(numb<10000);
+    
+    
 
     Email.send({
     SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
@@ -130,9 +133,12 @@ function sinki(){
     Body : "こちらがセキュリティコードです。『"+numb+"』"
     }).then(function (message) {
       alert("mail sent successfully")
+      location.href="ninsyou.html";
     });
 
-    location.href="ninsyou.html";
+ninsyocode=numb;
+alert(ninsyocode);
+    
     /*
     var user = new ncmb.User();         //二フクラに新しいユーザーを設定
 // [NCMB] ID / PW で新規登録
@@ -159,15 +165,17 @@ user.set("userName", username)      //ユーザーネームをセット
     });
     */}
 
-function ok(numb){
+function ok(ninsyou,ninsyocode){
+  
   var sigeru = document.getElementById(ninsyou).value;
-  if(sigeru==numb && sigeru!=""){
+  alert(ninsyocode);
+  if(sigeru==ninsyocode && sigeru!=""){
     alert("登録に成功しました！");
     location.href = "index.html";
-  }else if(result==""){
-    document.getElementById('errorText').innerHTML = "※入力してください"
+  }else if(sigeru==""){
+    document.getElementById('errorText2').innerHTML = "※入力してください"
   }else{
-    document.getElementById('temperture').value="";
-    document.getElementById('errorText').innerHTML = "※セキュリティコードが間違っています"
+    document.getElementById('ninsyou').value="";
+    document.getElementById('errorText2').innerHTML = "※セキュリティコードが間違っています"
   }
 }

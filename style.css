@@ -175,6 +175,6 @@ td.today {
      
 }
 
-#errorText{
+#errorText,#errorText2{
   color: rgba(255, 0, 0, 0.705)
 }

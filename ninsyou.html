@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="//apis.google.com/js/client.js?onload=onLoadCallbackFunction"></script>
   </head>
   <body>
     <script src="script.js"></script>
     <div id="in">
-    <h2>セキュリティコードを入力</h2>
-    <input type="text"  size="5" value="" placeholder="セキュリティーコード" id="ninsyou">
-    <button onclick="ok('ninsyou');">決定
+      <h2>セキュリティコードを入力</h2>
+      <input type="text" value="" placeholder="セキュリティーコード" id="ninsyou">
+      <p id="errorText2"><br></p>
+
+      <button onclick="ok('ninsyou','ninsyocode');">認証
     </div>
   </body>
 </html>
