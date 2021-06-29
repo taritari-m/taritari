@@ -113,12 +113,26 @@ function roguin(){
 }
 
 /*新規登録関数*/
-    function sinki(){
+function sinki(){
 
     var username=document.getElementById("username").value;     //ユーザーネームを取得
 
     var password=document.getElementById("password").value;     //パスワードを取得
+    var numb;
+    do{numb = Math.floor( Math.random() * 100000 );
+    }while(numb<10000);
 
+    Email.send({
+    SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
+    To : 'tatsuruyazawa@gmail.com',
+    From : "s201036@kashiwanoha.ed.jp",
+    Subject : "セキュリティコードです",
+    Body : "こちらがセキュリティコードです。『"+numb+"』"
+    }).then(function (message) {
+      alert("mail sent successfully")
+    });
+
+    location.href="ninsyou.html";
     /*
     var user = new ncmb.User();         //二フクラに新しいユーザーを設定
 // [NCMB] ID / PW で新規登録
@@ -144,3 +158,16 @@ user.set("userName", username)      //ユーザーネームをセット
         alert("すでにアカウントが存在しています");
     });
     */}
+
+function ok(numb){
+  var sigeru = document.getElementById(ninsyou).value;
+  if(sigeru==numb && sigeru!=""){
+    alert("登録に成功しました！");
+    location.href = "index.html";
+  }else if(result==""){
+    document.getElementById('errorText').innerHTML = "※入力してください"
+  }else{
+    document.getElementById('temperture').value="";
+    document.getElementById('errorText').innerHTML = "※セキュリティコードが間違っています"
+  }
+}
