@@ -116,6 +116,24 @@ function sinki(){
     var username=document.getElementById("username").value;     //ユーザーネームを取得
 
     var password=document.getElementById("password").value;     //パスワードを取得
+    var numb
+ 
+    for (var i = 0; i < 5; i++) {
+      numb += Math.floor(Math.random() * 10);
+    }
+
+    /*Email.send({
+      SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
+      To : 'tatsuruyazawa@gmail.com',
+      From : "s201036@kashiwanoha.ed.jp",
+      Subject : "セキュリティコードです",
+      Body : "こちらがセキュリティコードです。『"+numb+"』"
+      }).then(function (message) {
+        alert("mail sent successfully")
+        
+    });*/
+    alert(numb);
+    document.getElementById('code').innerHTML = numb;
     
     location.href="ninsyou.html";
     

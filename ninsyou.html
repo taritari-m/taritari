@@ -6,29 +6,7 @@
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="//apis.google.com/js/client.js?onload=onLoadCallbackFunction"></script>
-    <script>
-      window.onload = function () {
-        var numb = "";
- 
-        for (var i = 0; i < 5; i++) {
-          numb += Math.floor(Math.random() * 10);
-        }
 
-        Email.send({
-          SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
-          To : 'tatsuruyazawa@gmail.com',
-          From : "s201036@kashiwanoha.ed.jp",
-          Subject : "セキュリティコードです",
-          Body : "こちらがセキュリティコードです。『"+numb+"』"
-          }).then(function (message) {
-            alert("mail sent successfully")
-            
-        });
-        
-        document.getElementById('code').ng-value = numb;
-        alert(numb);
-      }
-    </script>
   </head>
   <body>
     <script src="script.js"></script>
@@ -36,7 +14,7 @@
       <h2>セキュリティコードを入力</h2>
       <input type="text" value="" placeholder="セキュリティーコード" id="ninsyou">
       <p id="errorText2"><br></p>
-      <p id="code" ng-value=""></p>
+      <p id="code" ></p>
 
       <button onclick="ok('ninsyou','ninsyocode');">認証
     </div>

@@ -178,3 +178,7 @@ td.today {
 #errorText,#errorText2{
   color: rgba(255, 0, 0, 0.705)
 }
+
+#code{
+  display:none;
+}
