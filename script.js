@@ -118,11 +118,9 @@ function sinki(){
     var password=document.getElementById("password").value;     //パスワードを取得
     var numb
  
-    for (var i = 0; i < 5; i++) {
-      numb += Math.floor(Math.random() * 10);
-    }
+    numb = ("0000000" + (Math.floor(Math.random() * 9999999) + 1)).slice(-5);
 
-    /*Email.send({
+    Email.send({
       SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
       To : 'tatsuruyazawa@gmail.com',
       From : "s201036@kashiwanoha.ed.jp",
@@ -130,13 +128,28 @@ function sinki(){
       Body : "こちらがセキュリティコードです。『"+numb+"』"
       }).then(function (message) {
         alert("mail sent successfully")
-        
-    });*/
-    alert(numb);
-    document.getElementById('code').innerHTML = numb;
+        var mes="セキュリティコードを入力してください";
+        var i=1;
+        do{
+          var UserInput = prompt(mes+":","");
+
+          if(UserInput==numb && UserInput!=""){
+            alert("登録に成功しました！");
+            location.href = "index.html";
+            i=1;
+          }else if(UserInput==""){
+            mes = "※入力してください";
+            i=2;
+          }else{
+            mes = "※セキュリティコードが間違っています";
+            i=2;
+          }
+        }while(i==2)
+    });
     
-    location.href="ninsyou.html";
     
+    
+
     /*
     var user = new ncmb.User();         //二フクラに新しいユーザーを設定
 // [NCMB] ID / PW で新規登録
@@ -163,22 +176,4 @@ user.set("userName", username)      //ユーザーネームをセット
     });
     */
     
-}
-
-function ok(ninsyou,code){
-  
-  var matsuzaki = document.getElementById(code).value;
-
-  var shigeru = document.getElementById(ninsyou).value;
-  alert(shigeru);
-  alert();
-  if(shigeru==numb && shigeru!=""){
-    alert("登録に成功しました！");
-    location.href = "index.html";
-  }else if(shigeru==""){
-    document.getElementById('errorText2').innerHTML = "※入力してください"
-  }else{
-    document.getElementById('ninsyou').value="";
-    document.getElementById('errorText2').innerHTML = "※セキュリティコードが間違っています"
-  }
 }
