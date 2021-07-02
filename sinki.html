@@ -11,8 +11,11 @@
   <body>
     <div id="in" >
       <h2>新規登録</h2>
-      <input type="username" id="username" rows="1" placeholder="メールアドレス">     <!--ID入力欄 -->
+      <input type="email" id="username" rows="1" placeholder="メールアドレス">     <!--ID入力欄 -->
       <input type="password" id="password" placeholder="パスワード">     <!--パスワード入力欄 -->
+      <input type="password" id="passwordcheck" placeholder="パスワード再確認">
+      <!--パスワード再入力欄-->
+      <p id="errorText2"><br></p>
       <button onClick="sinki();">登録</button>  <!--登録ボタン　新規登録関数を動かす -->
       ----------または----------<br>
       <a href="index.html"><button>ログイン</button></a>

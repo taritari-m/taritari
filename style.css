@@ -132,7 +132,7 @@ td.today {
 }
  
 /* ユーザーIDとパスワード入力ボックスのスタイル */
-#in input[type="username"], #in input[type="password"], #in input[type="text"]{
+#in input[type="email"], #in input[type="password"], #in input[type="text"]{
     background: none;
     display: block;
     margin: 20px auto;
@@ -147,7 +147,7 @@ td.today {
 }
  
 /* 入力ボックスがフォーカスされたときのスタイル（幅が大きくなる＆枠の色が変わる） */
-#in input[type="username"]:focus, #in input[type="password"]:focus, #in input[type="text"]:focus{
+#in input[type="email"]:focus, #in input[type="password"]:focus, #in input[type="text"]:focus{
     width: 280px;
     border-color: #ff7c5c;
     

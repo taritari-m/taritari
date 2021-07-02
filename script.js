@@ -116,37 +116,45 @@ function sinki(){
     var username=document.getElementById("username").value;     //ユーザーネームを取得
 
     var password=document.getElementById("password").value;     //パスワードを取得
+
+    var passwordcheck=document.getElementById("passwordcheck").value;
     var numb
  
-    numb = ("0000000" + (Math.floor(Math.random() * 9999999) + 1)).slice(-5);
+    if(username=="" || password==""){
+      document.getElementById('errorText2').innerHTML = "メールアドレス又はパスワードが入力されていません。"
+    }else if(password!=passwordcheck){
+    document.getElementById('errorText2').innerHTML = "パスワードが間違っています。"
+    }else{
+      
+      numb = ("0000000" + (Math.floor(Math.random() * 9999999) + 1)).slice(-5);
 
-    Email.send({
-      SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
-      To : 'tatsuruyazawa@gmail.com',
-      From : "s201036@kashiwanoha.ed.jp",
-      Subject : "セキュリティコードです",
-      Body : "こちらがセキュリティコードです。『"+numb+"』"
-      }).then(function (message) {
-        alert("mail sent successfully")
-        var mes="セキュリティコードを入力してください";
-        var i=1;
-        do{
-          var UserInput = prompt(mes+":","");
+      Email.send({
+        SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
+        To : username,
+        From : "s201036@kashiwanoha.ed.jp",
+        Subject : "セキュリティコードです",
+        Body : "こちらがセキュリティコードです。『"+numb+"』"
+        }).then(function (message) {
+          alert("メールが送信されました。")
+          var mes="セキュリティコードを入力してください";
+          var i=1;
+          do{
+            var UserInput = prompt(mes+":","");
 
-          if(UserInput==numb && UserInput!=""){
-            alert("登録に成功しました！");
-            location.href = "index.html";
-            i=1;
-          }else if(UserInput==""){
-            mes = "※入力してください";
-            i=2;
-          }else{
-            mes = "※セキュリティコードが間違っています";
-            i=2;
-          }
-        }while(i==2)
-    });
-    
+            if(UserInput==numb && UserInput!=""){
+              alert("登録に成功しました！");
+              location.href = "index.html";
+              i=1;
+            }else if(UserInput==""){
+              mes = "※入力してください";
+              i=2;
+            }else{
+              mes = "※セキュリティコードが間違っています";
+              i=2;
+            }
+          }while(i==2)
+      });
+    }
     
     
 
