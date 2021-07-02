@@ -93,6 +93,11 @@ function taion(a){
 }
 
 
+
+
+
+
+
 //ログイン
 function roguin(){
   var username=document.getElementById("username").value;    /*ユーザーネームを取得*/
@@ -158,15 +163,15 @@ function sinki(){
     
     
 
-    /*
-    var user = new ncmb.User();         //二フクラに新しいユーザーを設定
+    
+/*    var user = new ncmb.User();         //二フクラに新しいユーザーを設定
 // [NCMB] ID / PW で新規登録
 user.set("userName", username)      //ユーザーネームをセット
     .set("password", password)      //パスワードをセット
-    .signUpByAccount()              //セットした情報でサインアップ
+    .signUpByAccount()              //セットした情報で新規登録
     .then(function(user) {          //サインアップに成功した場合の処理
         //処理成功
-        // [NCMB] userインスタンスでログイン
+        // [NCMB] userインスタンスでログイン    //意：新規登録後,そのままログインする
         ncmb.User.login(user)       //二フクラのログインメソッド
                  .then(function(user) {     //ログインに成功した場合の処理
                      //処理成功
@@ -181,7 +186,74 @@ user.set("userName", username)      //ユーザーネームをセット
     .catch(function(error) {    //サインアップに失敗した場合の処理
         
         alert("すでにアカウントが存在しています");
-    });
-    */
+    });*/
+    
     
 }
+
+
+//偽物↓↓↓
+
+/*function sinki(){
+
+    var username=document.getElementById("username").value;     //ユーザーネームを取得
+
+    var password=document.getElementById("password").value;     //パスワードを取得
+
+    var passwordcheck=document.getElementById("passwordcheck").value;
+    var numb
+ 
+    if(username=="" || password==""){
+      document.getElementById('errorText2').innerHTML = "メールアドレス又はパスワードが入力されていません。"
+    }else if(password!=passwordcheck){
+    document.getElementById('errorText2').innerHTML = "パスワードが間違っています。"
+    }else{
+      
+      user.set("userName", username)      //ユーザーネームをセット
+      .set("password", password)      //パスワードをセット
+      .signUpByAccount()              //セットした情報でサインアップ
+      .then(function(user) {          //サインアップに成功した場合の処理
+        ncmb.User.login(user)       //二フクラのログインメソッド
+        .then(function(user) {     //ログインに成功した場合の処理
+
+          numb = ("0000000" + (Math.floor(Math.random() * 9999999) + 1)).slice(-5);
+
+          Email.send({
+            SecureToken : "17792034-0196-4d67-8dad-04392b10c5d4",
+            To : username,
+            From : "s201036@kashiwanoha.ed.jp",
+            Subject : "セキュリティコードです",
+            Body : "こちらがセキュリティコードです。『"+numb+"』"
+            }).then(function (message) {
+              alert("メールが送信されました。")
+              var mes="セキュリティコードを入力してください";
+              var i=1;
+              do{
+                var UserInput = prompt(mes+":","");
+
+                if(UserInput==numb && UserInput!=""){
+                  alert("登録に成功しました！");
+                  location.href = "index.html";
+                  i=1;
+                }else if(UserInput==""){
+                  mes = "※入力してください";
+                  i=2;
+                }else{
+                  mes = "※セキュリティコードが間違っています";
+                  i=2;
+                }
+              }while(i==2)
+          });
+        })
+        .catch(function(error) {       //ログインに失敗した場合の処理
+                     //処理失敗
+                     alert("新規登録に失敗しました");
+        });
+      })
+      .catch(function(error) {    //サインアップに失敗した場合の処理
+        
+        alert("すでにアカウントが存在しています");
+    });
+    }
+}
+*/
